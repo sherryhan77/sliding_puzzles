@@ -1,0 +1,60 @@
+{% load static from staticfiles %}
+<html>
+  <head>
+    <!-- load jquery -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- image picker js -->
+
+    <!-- Latest compiled JavaScript -->
+    <script src= "{% static 'js/image-picker.js' %}" /></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/image-picker.css' %}">
+  </head>
+
+  <body>
+    <h1> Game Setting </h1>
+    <p>Choose the image you want to play </p>
+    <!-- <img src="{% static 'puzzlebox/img/01.png' %}" alt="test"> -->
+    <select id="selectImage" class="image-picker show-labels show-html">
+      <option data-img-src="{% static 'img/01.png' %}" value="1">test-1</option>
+      <option data-img-src="{% static 'img/02.png' %}" value="2">test-2</option>
+      <option data-img-src="{% static 'img/03.png' %}" value="3">test-3</option>
+    </select>
+    <div id="slider">
+      <form>
+        <p>Choose difficulty level </p>
+        <label>Easy</label>
+        <input type="range" id="scale" value="4" min="3" max="5" step="1">
+        <label>Hard</label>
+      </form>
+      <br>
+    </div>
+
+    <form action="" method="POST">
+      <button onclick="myFunction()"> Start Game</button>
+    </form>
+    
+  </body>
+  <script>
+    jQuery("select.image-picker").imagepicker({
+        hide_select: false,
+      });
+
+      jQuery("select.image-picker.show-labels").imagepicker({
+        hide_select: false,
+        show_label: true,
+      });
+
+      jQuery("select.image-picker.limit_callback").imagepicker({
+        limit_reached: function () { alert('We are full!') },
+        hide_select: false
+      });
+  </script>
+  <script>
+    var tileCount = document.getElementById('scale').value;
+  </script>
+  
+
+</html>
