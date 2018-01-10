@@ -3,9 +3,7 @@ var context = document.getElementById("puzzle").getContext("2d");
 // get image source
 var img = new Image(480, 480);
 //img.src = 'http://www.brucealderman.info/Images/dimetrodon.jpg';
-// img.src = 'images/04.png';
-img.src = "{% static 'img/01.png' %}" 
-
+img.src = 'images/04.png';
 addEventListener('load', drawTiles, false);
 
 var realWidth = img.width;

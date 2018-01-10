@@ -1,3 +1,4 @@
+{% load static from staticfiles %}
 <html>
 <head>
   <meta charset="utf-8" />
@@ -6,16 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
   <!-- <script src="main.js"></script> -->
+  <script stype="text/javascript" src="{% static 'js/puzzle_hanlder.js' %}"></script>  
 </head>
 <body>
   <!-- slider to choose difficulty-level -->
   <div id="slider">
-    <form>
+    <!-- <form>
       <label>Easy</label>
       <input type="range" id="scale" value="4" min="3" max="5" step="1">
       <label>Hard</label>
     </form>
-    <br>
+    <br> -->
   </div>
   <!-- rendering the image -->
   
@@ -23,6 +25,9 @@
     <canvas id="puzzle" width="480px" height="480px"></canvas>
   </div>
 </body>
-  <script stype="text/javascript" src="puzzle.js"></script>
-
-  </html>
+  <script>
+    var img_url = "{% static 'img/01.png' %}";
+    var difficulty_level = 3;
+    puzzle_handler(img_url, difficulty_level);
+ </script>
+   </html>
