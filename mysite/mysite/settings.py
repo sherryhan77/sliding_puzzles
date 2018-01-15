@@ -120,6 +120,7 @@ USE_TZ = True
 
 # settings.py
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = 'home'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -131,4 +132,3 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
-
